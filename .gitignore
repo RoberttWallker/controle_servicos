@@ -1,5 +1,2 @@
-!data/input/
-data/input/*.xlsx
-!data/output/
-data/output/*.xlsx
+*.xlsx
 controleservicos
