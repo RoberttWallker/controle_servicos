@@ -24,15 +24,16 @@ def tela_inicial():
 
     def criar_janela_cadastro():
         def cadastro_servico_tk():
-            try:    
+            try: 
                 os = int(entry_os.get())
                 loja = str(entry_loja.get())
                 data_entrada = datetime.strptime(entry_data_entrada.get(), "%d/%m/%Y")
                 data_saida = datetime.strptime(entry_data_saida.get(), "%d/%m/%Y")
                 descricao_peca = str(text_descricao_peca.get("1.0", "end"))
                 descricao_servico = str(text_descricao_servico.get("1.0", "end"))
-                peso_entrada = float(entry_peso_entrada.get())
-                peso_saida = float(entry_peso_saida.get())
+                peso_entrada = entry_peso_entrada.get()
+                peso_saida = entry_peso_saida.get()
+                
                 # Criando objeto Servicos
                 servico = Servicos(
                     os,
@@ -68,7 +69,7 @@ def tela_inicial():
                 messagebox.showerror("Erro", f"Ocorreu um erro do tipo: {e}")
 
         janela_cadastro = tk.Toplevel(app)
-        janela_cadastro.geometry("600x600")
+        janela_cadastro.geometry("750x600")
         janela_cadastro.title("Cadastro de Serviço")
         
 
@@ -101,6 +102,7 @@ def tela_inicial():
         text_descricao_servico.grid(row=5, column=1, padx=10, pady=5)
 
         ttk.Label(janela_cadastro, text='Peso entrada').grid(row=6, column=0, padx=10, pady=5)
+        ttk.Label(janela_cadastro, text='Uitilizar "." ao invés de ","').grid(row=6, column=3)
         entry_peso_entrada = ttk.Entry(janela_cadastro)
         entry_peso_entrada.grid(row=6, column=1, padx=10, pady=5)
 
