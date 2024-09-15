@@ -1,3 +1,6 @@
-from modulos.gui import verifica_cria_df
+from modulos.gui import tela_inicial
 
-verifica_cria_df()
+tela_inicial()
+
+
+
